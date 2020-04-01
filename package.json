@@ -1,0 +1,24 @@
+{
+  "name": "corona-brief",
+  "version": "1.0.0",
+  "description": "C'est un projet pour valider les compétences C3N3 (C2N3).",
+  "main": "index.js",
+  "scripts": {
+  "compile": "node-sass Starter-file/sass/fichier.scss Starter-file/dist/css/style.css",
+  "watch": "node-sass Starter-file/sass/fichier.scss Starter-file/dist/css/style.css --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abdelfattahD/C3Worshops.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/abdelfattahD/C3Worshops/issues"
+  },
+  "homepage": "https://github.com/abdelfattahD/C3Worshops#readme",
+  "dependencies": {
+    "node-sass": "^4.13.1"
+  }
+}
