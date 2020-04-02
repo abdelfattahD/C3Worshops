@@ -68,4 +68,36 @@ body {
     display: flex;
     justify-content: center; }
     .Symptomes .Symptomes_section img {
-      padding: 0 30px; }
+      padding: 0 80px; }
+
+.Recommandations {
+  background-color: #0d77ac; }
+  .Recommandations h2 {
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    font-size: 3vw;
+    padding-top: 30px; }
+  .Recommandations .Recommandations_contnt {
+    display: flex;
+    margin: 0 30px;
+    justify-content: space-between; }
+    .Recommandations .Recommandations_contnt .Recommandations_contnt-text, .Recommandations .Recommandations_contnt .Recommandations_contnt-Apple {
+      font-size: 2vw;
+      font-weight: bold;
+      padding: 20px;
+      line-height: 1.8;
+      color: white; }
+    .Recommandations .Recommandations_contnt .Recommandations_contnt-Apple {
+      text-align: center; }
+      .Recommandations .Recommandations_contnt .Recommandations_contnt-Apple #apple {
+        color: #f4cf1b;
+        font-size: 2.5vw; }
+      .Recommandations .Recommandations_contnt .Recommandations_contnt-Apple #number {
+        background-color: #f4cf1b;
+        padding: 20px 50px;
+        border-radius: 10px;
+        font-size: 2.5vw;
+        color: #0d77ac; }
+      .Recommandations .Recommandations_contnt .Recommandations_contnt-Apple a {
+        color: white; }

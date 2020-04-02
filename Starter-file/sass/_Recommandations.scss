@@ -1,3 +1,41 @@
 .Recommandations{
     background-color: $bleu;
+    h2{
+        text-align: center;
+        color: $white;
+        font-weight: bold;
+        font-size: 3vw;
+        padding-top: 30px;
+    }
+    .Recommandations_contnt{
+        display: flex;
+        margin: 0 30px;
+        justify-content: space-between;
+        .Recommandations_contnt-text ,.Recommandations_contnt-Apple{
+            font-size: 2vw;
+            font-weight: bold;
+            padding: 20px;
+            line-height:  1.8;
+            color: $white;
+        }
+        .Recommandations_contnt-Apple{
+            text-align: center;
+            #apple{
+                color: $Jaune;
+                font-size: 2.5vw;
+            }
+            #number{
+                background-color: $Jaune;
+                padding: 20px 50px;
+                border-radius: 10px;
+                font-size: 2.5vw;
+                color: $bleu;
+
+            }
+            a{
+                color: $white;
+            }
+        }
+        
+    }
 }
