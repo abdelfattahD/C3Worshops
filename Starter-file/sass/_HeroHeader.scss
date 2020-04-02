@@ -1,11 +1,13 @@
 // color
 $Jaune: #f4cf1b;
 $bleu: #0d77ac;
+$bleu2: #96c5dc;
 $white :white;
 
 body{
     margin: 0;
     padding: 0;
+   
     
 }
 *{
@@ -32,9 +34,13 @@ body{
             width: 100%; 
 
             .arabic{
-                border: 1px solid;
+                padding: 0px 10px;
+                border: 1.5px solid rgba($color: #000000, $alpha: .4);
                 border-radius: 5px;
-
+                i{
+                    color: gold;
+                    font-size: 20px;
+                }
             }
 
 
@@ -42,7 +48,7 @@ body{
                 cursor: pointer;
                 a{
                     text-decoration: none;
-                    padding: 4vw 1.2vw;
+                    padding: 4vw 1vw;
                      font-size: 1.7vw;
                    }
 
@@ -83,12 +89,15 @@ body{
             
 
             }
-            a{
-                padding: 8px 166px ;
-                font-size: 2.7vw;
-                background-image: url(../../../Design/Assets/png/Enchiffres-1.png);
-                background-repeat: no-repeat;
-                color: cornsilk;
+            button{
+                background-color: $bleu;
+                padding: 5px 10px;
+                border-radius: 5px;
+                font-size: 2.5vw;
+                color: $white;
+                width: 60%;
+                margin:  10px auto;
+                min-width: 200px;
                 
             }
         }

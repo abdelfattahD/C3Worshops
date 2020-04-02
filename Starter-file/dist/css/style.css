@@ -21,13 +21,17 @@ body {
       justify-content: space-between;
       width: 100%; }
       .HeroHeader .HeroHeader_ContenantMenu nav ul .arabic {
-        border: 1px solid;
+        padding: 0px 10px;
+        border: 1.5px solid rgba(0, 0, 0, 0.4);
         border-radius: 5px; }
+        .HeroHeader .HeroHeader_ContenantMenu nav ul .arabic i {
+          color: gold;
+          font-size: 20px; }
       .HeroHeader .HeroHeader_ContenantMenu nav ul li {
         cursor: pointer; }
         .HeroHeader .HeroHeader_ContenantMenu nav ul li a {
           text-decoration: none;
-          padding: 4vw 1.2vw;
+          padding: 4vw 1vw;
           font-size: 1.7vw; }
 
 .HeroHeader .HeroHeader_WarningInfo {
@@ -52,12 +56,15 @@ body {
       color: #0d77ac; }
     .HeroHeader .HeroHeader_Illustration .HeroHeader_Illustration--text p {
       font-size: 2.3vw; }
-    .HeroHeader .HeroHeader_Illustration .HeroHeader_Illustration--text a {
-      padding: 8px 166px;
-      font-size: 2.7vw;
-      background-image: url(../../../Design/Assets/png/Enchiffres-1.png);
-      background-repeat: no-repeat;
-      color: cornsilk; }
+    .HeroHeader .HeroHeader_Illustration .HeroHeader_Illustration--text button {
+      background-color: #0d77ac;
+      padding: 5px 10px;
+      border-radius: 5px;
+      font-size: 2.5vw;
+      color: white;
+      width: 60%;
+      margin: 10px auto;
+      min-width: 200px; }
 
 .Symptomes {
   padding: 40px 0;
@@ -101,3 +108,51 @@ body {
         color: #0d77ac; }
       .Recommandations .Recommandations_contnt .Recommandations_contnt-Apple a {
         color: white; }
+
+.HeroFooter {
+  font-weight: bold; }
+  .HeroFooter .HeroFooter_test {
+    background-color: #96c5dc;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    justify-content: space-around; }
+    .HeroFooter .HeroFooter_test p {
+      font-size: 1.8vw;
+      color: #0d77ac; }
+    .HeroFooter .HeroFooter_test img {
+      margin: 10px auto; }
+    .HeroFooter .HeroFooter_test .test--Button {
+      background-color: #0d77ac;
+      padding: 5px 10px;
+      border-radius: 5px;
+      font-size: 2.5vw;
+      color: white;
+      width: 30%;
+      margin: 10px auto; }
+  .HeroFooter .HeroFooter_footer {
+    margin: 40px;
+    text-align: center; }
+    .HeroFooter .HeroFooter_footer .HeroFooter_footerContnt {
+      display: flex;
+      justify-content: space-between; }
+      .HeroFooter .HeroFooter_footer .HeroFooter_footerContnt .arabic h1 {
+        border: 1.5px solid #0d77ac;
+        border-radius: 10px;
+        padding: 8px 15px; }
+      .HeroFooter .HeroFooter_footer .HeroFooter_footerContnt .arabic i {
+        color: gold;
+        font-size: 20px; }
+      .HeroFooter .HeroFooter_footer .HeroFooter_footerContnt p {
+        margin-top: 80px;
+        width: 45%;
+        text-align: justify;
+        font-size: 1.1vw;
+        line-height: 40px; }
+      .HeroFooter .HeroFooter_footer .HeroFooter_footerContnt .HeroFooter_footerContnt--ContactUs {
+        margin-top: 20px; }
+        .HeroFooter .HeroFooter_footer .HeroFooter_footerContnt .HeroFooter_footerContnt--ContactUs h1 {
+          color: #0d77ac; }
+        .HeroFooter .HeroFooter_footer .HeroFooter_footerContnt .HeroFooter_footerContnt--ContactUs h3 {
+          color: #3fc24a; }
