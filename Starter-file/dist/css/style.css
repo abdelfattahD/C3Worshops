@@ -58,3 +58,14 @@ body {
       background-image: url(../../../Design/Assets/png/Enchiffres-1.png);
       background-repeat: no-repeat;
       color: cornsilk; }
+
+.Symptomes {
+  padding: 40px 0;
+  text-align: center; }
+  .Symptomes h1 {
+    color: #0d77ac; }
+  .Symptomes .Symptomes_section {
+    display: flex;
+    justify-content: center; }
+    .Symptomes .Symptomes_section img {
+      padding: 0 30px; }

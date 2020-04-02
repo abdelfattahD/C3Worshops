@@ -1,0 +1,17 @@
+
+.Symptomes{
+    padding: 40px 0;
+    text-align: center;
+    h1{
+        color: $bleu;
+    }
+
+    .Symptomes_section{
+        display: flex;
+        justify-content: center;
+        
+        img{
+            padding: 0 30px;
+        }
+    }
+}
