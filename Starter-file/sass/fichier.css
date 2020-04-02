@@ -1,0 +1,38 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.HeroHeader .HeroHeader_ContenantMenu {
+  background-image: url(../../Design/Assets/png/Merged-bar-45.png);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.HeroHeader .HeroHeader_ContenantMenu nav {
+  margin-left: 40vw;
+}
+
+.HeroHeader .HeroHeader_ContenantMenu nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style: none;
+  font-style: none;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+}
+
+.HeroHeader .HeroHeader_ContenantMenu nav ul li {
+  position: relative;
+}
+
+.HeroHeader .HeroHeader_ContenantMenu nav ul li a {
+  text-decoration: none;
+  padding: 4vw 1.2vw;
+  font-size: 1.3vw;
+}
+/*# sourceMappingURL=fichier.css.map */

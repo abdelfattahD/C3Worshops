@@ -1,2 +1,60 @@
 body {
-  background-color: 0; }
+  margin: 0;
+  padding: 0; }
+
+* {
+  font-family: sans-serif;
+  list-style: none;
+  text-decoration: none; }
+
+.HeroHeader .HeroHeader_ContenantMenu {
+  background-image: url(../../../Design/Assets/png/Merged-bar-45.png);
+  display: flex;
+  padding: 10px; }
+  .HeroHeader .HeroHeader_ContenantMenu nav {
+    margin-left: 63vw;
+    margin-top: 20px; }
+    .HeroHeader .HeroHeader_ContenantMenu nav ul {
+      display: flex;
+      list-style: none;
+      font-style: none;
+      justify-content: space-between;
+      width: 100%; }
+      .HeroHeader .HeroHeader_ContenantMenu nav ul .arabic {
+        border: 1px solid;
+        border-radius: 5px; }
+      .HeroHeader .HeroHeader_ContenantMenu nav ul li {
+        cursor: pointer; }
+        .HeroHeader .HeroHeader_ContenantMenu nav ul li a {
+          text-decoration: none;
+          padding: 4vw 1.2vw;
+          font-size: 1.7vw; }
+
+.HeroHeader .HeroHeader_WarningInfo {
+  background-color: #f4cf1b;
+  margin-top: -22px;
+  text-align: center;
+  line-height: 1.8; }
+  .HeroHeader .HeroHeader_WarningInfo p {
+    color: #0d77ac;
+    max-width: 40vw;
+    margin: auto;
+    font-weight: bold;
+    font-size: 0.8em; }
+
+.HeroHeader .HeroHeader_Illustration {
+  display: flex;
+  text-align: center;
+  font-weight: bold; }
+  .HeroHeader .HeroHeader_Illustration .HeroHeader_Illustration--text {
+    margin-top: 55px; }
+    .HeroHeader .HeroHeader_Illustration .HeroHeader_Illustration--text h1 {
+      color: #0d77ac; }
+    .HeroHeader .HeroHeader_Illustration .HeroHeader_Illustration--text p {
+      font-size: 2.3vw; }
+    .HeroHeader .HeroHeader_Illustration .HeroHeader_Illustration--text a {
+      padding: 8px 166px;
+      font-size: 2.7vw;
+      background-image: url(../../../Design/Assets/png/Enchiffres-1.png);
+      background-repeat: no-repeat;
+      color: cornsilk; }
