@@ -4,14 +4,20 @@
     text-align: center;
     h1{
         color: $bleu;
+        font-size: 3vw;
     }
 
     .Symptomes_section{
         display: flex;
         justify-content: center;
+
+        p{
+            font-weight: bold;
+            color:$bleu ;
+        }
         
         img{
-            padding: 0 80px;
+            padding: 0 130px;
         }
     }
 }

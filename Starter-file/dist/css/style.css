@@ -70,12 +70,35 @@ body {
   padding: 40px 0;
   text-align: center; }
   .Symptomes h1 {
-    color: #0d77ac; }
+    color: #0d77ac;
+    font-size: 3vw; }
   .Symptomes .Symptomes_section {
     display: flex;
     justify-content: center; }
+    .Symptomes .Symptomes_section p {
+      font-weight: bold;
+      color: #0d77ac; }
     .Symptomes .Symptomes_section img {
-      padding: 0 80px; }
+      padding: 0 130px; }
+
+.Informations {
+  background-color: #96c5dc;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-around;
+  text-align: center; }
+  .Informations .Informations_link, .Informations .Informations_button {
+    padding: 20px 20px;
+    background-color: #0d77ac;
+    border-radius: 5px;
+    margin: auto; }
+    .Informations .Informations_link a, .Informations .Informations_button a {
+      color: white; }
+  .Informations .Informations_text {
+    color: #0d77ac;
+    font-size: 2vw;
+    line-height: 40px;
+    margin: auto; }
 
 .Recommandations {
   background-color: #0d77ac; }

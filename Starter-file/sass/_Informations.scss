@@ -1,0 +1,28 @@
+.Informations{
+    background-color: $bleu2 ;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+  
+
+    .Informations_link  ,.Informations_button {
+        padding: 20px 20px;
+        background-color:$bleu;
+       
+        border-radius: 5px;
+        margin: auto;
+
+        a{
+            color: $white;
+        }
+    }
+    .Informations_text{
+        color:$bleu ;
+        font-size: 2vw;
+        line-height: 40px;
+        margin: auto;
+    }
+
+
+}
