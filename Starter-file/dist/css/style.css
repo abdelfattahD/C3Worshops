@@ -22,7 +22,7 @@ body {
       width: 100%; }
       .HeroHeader .HeroHeader_ContenantMenu nav ul .arabic {
         padding: 0px 10px;
-        border: 1.5px solid rgba(0, 0, 0, 0.4);
+        border: 1.5px solid #0d77ac;
         border-radius: 5px; }
         .HeroHeader .HeroHeader_ContenantMenu nav ul .arabic i {
           color: gold;
