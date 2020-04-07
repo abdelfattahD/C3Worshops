@@ -21,22 +21,30 @@ body{
         background-image: url(../../../Design/Assets/png/Merged-bar-45.png);
         display: flex;
        padding: 10px;
-        
+       justify-content: space-between;
       
         nav{
-            margin-left: 63vw;
+            
             margin-top: 20px;
             ul{
             display: flex;
             list-style: none;
             font-style: none;
-            justify-content: space-between;
-            width: 100%; 
+            align-items: baseline;
+           
+           
 
             .arabic{
-                padding: 0px 10px;
-                border: 1.5px solid $bleu;
-                border-radius: 5px;
+                padding: 0 20px;
+                button{
+                    padding: 5px 20px;
+                    border: 1.5px solid $bleu;
+                border-radius: 10px;
+                background: none;
+              
+                }
+            
+               
                 i{
                     color: gold;
                     font-size: 20px;
@@ -46,10 +54,17 @@ body{
 
             li{
                 cursor: pointer;
+                position: relative;
                 a{
                     text-decoration: none;
                     padding: 4vw 1vw;
-                     font-size: 1.7vw;
+                     font-size: 1.7Em;
+                     @media (max-width:600px) {
+                        padding: 2vw 1vw;
+                        font-size: 1Em;
+                       
+                     } 
+                     
                    }
 
 
@@ -76,10 +91,37 @@ body{
 
     .HeroHeader_Illustration{
         display: flex;
+        @media (max-width:600px) {
+            display: block;
+            text-align: center;
+           
+         } 
+     
         text-align: center;
         font-weight: bold;
+        img{
+            width: 50%;
+
+            @media (max-width:600px) {
+                width: 80%;
+                
+               
+             } 
+            
+        }
+        
         .HeroHeader_Illustration--text{
             margin-top: 55px;
+            width: 50%;
+            @media (max-width:600px) {
+                width: 100%;
+                
+               
+             } 
+
+            img{
+                width: 14%;
+            }
             h1{
                 color: $bleu;
 

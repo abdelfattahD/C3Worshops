@@ -10,6 +10,13 @@
     .Symptomes_section{
         display: flex;
         justify-content: center;
+        div{
+            padding: 0 10vw;
+            @media (max-width:600px) {
+                padding: 0 ;
+               
+             } 
+        }
 
         p{
             font-weight: bold;
@@ -17,7 +24,7 @@
         }
         
         img{
-            padding: 0 130px;
+            padding: 0;
         }
     }
 }
