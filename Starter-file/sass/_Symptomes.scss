@@ -10,8 +10,9 @@
     .Symptomes_section{
         display: flex;
         justify-content: center;
+        flex-wrap: wrap;
         div{
-            padding: 0 10vw;
+            padding: 0 5vw;
             @media (max-width:600px) {
                 padding: 0 ;
                

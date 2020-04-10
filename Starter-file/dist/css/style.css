@@ -96,9 +96,10 @@ body {
     font-size: 3vw; }
   .Symptomes .Symptomes_section {
     display: flex;
-    justify-content: center; }
+    justify-content: center;
+    flex-wrap: wrap; }
     .Symptomes .Symptomes_section div {
-      padding: 0 10vw; }
+      padding: 0 5vw; }
       @media (max-width: 600px) {
         .Symptomes .Symptomes_section div {
           padding: 0; } }
@@ -114,11 +115,19 @@ body {
   display: flex;
   justify-content: space-around;
   text-align: center; }
+  @media (max-width: 600px) {
+    .Informations {
+      display: block; } }
   .Informations .Informations_link, .Informations .Informations_button {
     padding: 20px 20px;
     background-color: #0d77ac;
     border-radius: 5px;
     margin: auto; }
+    @media (max-width: 600px) {
+      .Informations .Informations_link, .Informations .Informations_button {
+        width: 36%;
+        min-width: 200px;
+        margin-bottom: 20px; } }
     .Informations .Informations_link a, .Informations .Informations_button a {
       color: white; }
   .Informations .Informations_text {
