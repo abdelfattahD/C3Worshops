@@ -52,6 +52,9 @@ body {
     margin: auto;
     font-weight: bold;
     font-size: 0.8em; }
+    @media (max-width: 600px) {
+      .HeroHeader .HeroHeader_WarningInfo p {
+        max-width: 90vw; } }
 
 .HeroHeader .HeroHeader_Illustration {
   display: flex;
@@ -238,6 +241,9 @@ body {
             font-size: 2.1vw; } }
       .HeroFooter .HeroFooter_footer .HeroFooter_footerContnt .HeroFooter_footerContnt--ContactUs {
         margin-top: 20px; }
+        @media (max-width: 700px) {
+          .HeroFooter .HeroFooter_footer .HeroFooter_footerContnt .HeroFooter_footerContnt--ContactUs {
+            margin-top: 0px; } }
         .HeroFooter .HeroFooter_footer .HeroFooter_footerContnt .HeroFooter_footerContnt--ContactUs h1 {
           color: #0d77ac; }
         .HeroFooter .HeroFooter_footer .HeroFooter_footerContnt .HeroFooter_footerContnt--ContactUs h3 {

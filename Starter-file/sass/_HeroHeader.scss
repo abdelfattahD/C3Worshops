@@ -84,6 +84,11 @@ body{
             margin: auto;
             font-weight: bold;
             font-size: 0.8em;
+            @media (max-width:600px) {
+            
+                max-width: 90vw;
+    
+            }
             
 
         }
