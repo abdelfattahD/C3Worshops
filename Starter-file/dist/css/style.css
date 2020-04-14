@@ -6,6 +6,15 @@ body {
   font-family: sans-serif;
   list-style: none;
   text-decoration: none; }
+  * :lang(fr) [data-fr] {
+    display: block; }
+  * :lang(fr) [data-ar] {
+    display: none; }
+  * :lang(ar) [data-ar] {
+    display: block;
+    direction: rtl; }
+  * :lang(ar) [data-fr] {
+    display: none; }
 
 .HeroHeader .HeroHeader_ContenantMenu {
   background-image: url(../../../Design/Assets/png/Merged-bar-45.png);

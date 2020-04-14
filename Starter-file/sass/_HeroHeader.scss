@@ -4,16 +4,23 @@ $bleu: #0d77ac;
 $bleu2: #96c5dc;
 $white :white;
 
+
 body{
     margin: 0;
     padding: 0;
    
     
 }
+
 *{
     font-family: sans-serif;
     list-style: none;
     text-decoration: none;
+:lang(fr) [data-fr] { display: block; }
+:lang(fr) [data-ar] { display: none; }
+
+:lang(ar) [data-ar] { display: block;  direction: rtl;  }
+:lang(ar) [data-fr] { display: none; }
 
 }
 .HeroHeader{
