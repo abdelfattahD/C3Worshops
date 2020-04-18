@@ -2,7 +2,7 @@
    
     font-weight: bold;
     
-    .HeroFooter_test{
+    &_test{
         background-color: $bleu2;
         text-align: center;
         display: flex;
@@ -21,7 +21,7 @@
         width: 6%;
        }
 
-        .test--Button{
+       .test--Button{
             background-color: $bleu;
                 padding: 5px 10px;
                 border-radius: 5px;
@@ -45,7 +45,7 @@
            
          } 
 
-         .HeroFooter_footerContnt-list{
+         &-list{
             display: flex;
             justify-content: space-between;
 
@@ -84,7 +84,7 @@
              } 
            }
        
-          .HeroFooter_footerContnt--ContactUs{
+          &--ContactUs{
               margin-top: 20px;
               @media (max-width:700px) {
                 margin-top: 0px;

@@ -1,0 +1,211 @@
+.line {
+    padding-top: 2em;
+    max-width: 60%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+
+    &__bigcercle {
+        width: 40px;
+        height: 40px;
+        margin: 0 auto;
+        background-color: $bleu2;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+
+    }
+
+    &__smallcercle {
+        width: 15px;
+        height: 15px;
+        background-color: #96C5DC;
+        border-radius: 50%;
+        margin: 0 auto;
+
+
+
+    }
+
+    .active {
+        background-color: gold;
+    }
+}
+
+.preamb {
+    padding-top: 0.7em;
+    padding-bottom: 0.7em;
+    max-width: 80%;
+    margin: 0 auto;
+    text-align: center;
+    background-color: #96C5DC;
+    border-radius: 10px;
+
+    &__title {
+        font-size: 1.5em;
+        color: $color1;
+    }
+
+    &__info {
+        max-width: 95%;
+        margin: auto;
+        margin-bottom: 1em;
+
+        &--seco {
+            padding-top: .7em;
+            max-width: 95%;
+            margin: auto;
+        }
+    }
+
+    &__line {
+        border-bottom: 3px solid gold;
+        width: 40%;
+        margin: auto;
+    }
+
+
+}
+
+.startb {
+    text-align: center;
+    margin: 1em;
+
+    &__btn {
+        background: url("../../../Design/Assets/png/btn.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+        width: 15em;
+        color: #fff;
+        font-size: 22px;
+        font-weight: 700;
+        border-radius: 10px;
+        margin-top: 2em;
+        cursor: pointer;
+    }
+}
+
+
+
+
+
+
+.questions {
+    padding: 30px;
+
+
+    .question_1 {
+        width: 60%;
+        margin: auto;
+        margin-top: 60px;
+        text-align: center;
+        color: $btn_color;
+
+    }
+
+    .input_Q {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        input {
+            width: 20%;
+            height: 40px;
+            border: 2px solid $btn_color;
+            border-radius: 10px;
+            text-align: center;
+            font-size: x-large;
+        }
+
+    }
+}
+
+
+
+
+.radio_G {
+    width: 40%;
+    margin: auto;
+
+
+    .option {
+        position: relative;
+
+        input {
+            display: none;
+        }
+
+        label {
+            font-size: 20px;
+            cursor: pointer;
+            color: $btn_color;
+            margin-left: 20px;
+        }
+    }
+
+    .option label::after {
+        position: absolute;
+        content: "";
+        width: 25px;
+        height: 25px;
+        border: 4px solid #1078ad;
+        border-radius: 50%;
+        left: -22px;
+        top: 2px;
+    }
+
+    .option label::before {
+        position: absolute;
+        content: "";
+        width: 16px;
+        height: 16px;
+        background-color: gold;
+        border-radius: 50%;
+        left: -14px;
+        top: 10.5px;
+        opacity: 0;
+
+    }
+
+    .option input:checked~label::before {
+        opacity: 1;
+
+    }
+}
+
+.consei {
+    width: 50%;
+    padding: 20px;
+    text-align: center;
+    background-color: gold;
+    border-radius: 10px;
+    margin: auto;
+
+
+}
+
+
+.btns {
+    margin-bottom: 100px;
+    display: flex;
+    justify-content: space-evenly;
+    margin: auto;
+    padding: 50px;
+
+
+    .btn-return button,
+    .btn_next button {
+        background-color: $btn_color;
+        border-radius: 10px;
+        padding: 0 .8em;
+        color: red;
+
+
+    }
+
+    .return {
+        opacity: 0;
+    }
+
+
+}

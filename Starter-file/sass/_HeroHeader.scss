@@ -3,6 +3,8 @@ $Jaune: #f4cf1b;
 $bleu: #0d77ac;
 $bleu2: #96c5dc;
 $white :white;
+$btn_color :white;
+$color1:#0d77ac;
 
 
 body{
@@ -16,6 +18,8 @@ body{
     font-family: sans-serif;
     list-style: none;
     text-decoration: none;
+
+    
 :lang(fr) [data-fr] { display: block; }
 :lang(fr) [data-ar] { display: none; }
 
