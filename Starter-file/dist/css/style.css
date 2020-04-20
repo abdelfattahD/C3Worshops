@@ -291,7 +291,7 @@ body {
   border-radius: 10px; }
   .preamb__title {
     font-size: 1.5em;
-    color: #0d77ac; }
+    color: black; }
   .preamb__info {
     max-width: 95%;
     margin: auto;
@@ -313,7 +313,7 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     width: 15em;
-    color: #fff;
+    color: white;
     font-size: 22px;
     font-weight: 700;
     border-radius: 10px;
@@ -321,13 +321,12 @@ body {
     cursor: pointer; }
 
 .questions {
-  padding: 30px; }
+  padding-bottom: 15px; }
   .questions .question_1 {
     width: 60%;
     margin: auto;
-    margin-top: 60px;
     text-align: center;
-    color: white; }
+    color: black; }
   .questions .input_Q {
     display: flex;
     justify-content: center;
@@ -335,7 +334,7 @@ body {
     .questions .input_Q input {
       width: 20%;
       height: 40px;
-      border: 2px solid white;
+      border: 2px solid #0d77ac;
       border-radius: 10px;
       text-align: center;
       font-size: x-large; }
@@ -344,13 +343,14 @@ body {
   width: 40%;
   margin: auto; }
   .radio_G .option {
-    position: relative; }
+    position: relative;
+    margin: 20px; }
     .radio_G .option input {
       display: none; }
     .radio_G .option label {
       font-size: 20px;
       cursor: pointer;
-      color: white;
+      color: black;
       margin-left: 20px; }
   .radio_G .option label::after {
     position: absolute;
@@ -390,9 +390,14 @@ body {
   padding: 50px; }
   .btns .btn-return button,
   .btns .btn_next button {
-    background-color: white;
+    background-color: #0d77ac;
     border-radius: 10px;
-    padding: 0 .8em;
-    color: red; }
+    padding: 1em;
+    color: white; }
   .btns .return {
-    opacity: 0; }
+    opacity: 1; }
+
+#question_2 .choix {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 24vw; }
