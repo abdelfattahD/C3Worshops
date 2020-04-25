@@ -66,7 +66,7 @@
 
             <div>
                 <div class="line__bigcercle">
-                    <div class="line__smallcercle">
+                    <div class="line__smallcercle active1">
                     </div>
                 </div>
                 <div class="text">
@@ -166,10 +166,12 @@
 
      <!----------------------------------question 2 -----------------------------------------  -->
      <section id="question_2" style="display: none;">
+        <!-- -----------------------------------------------------question__2--------------------------------------- -->
+      <div id="question__2" style="display: block;">
         <div class="conta">
             <div class="questions">
                 <div class="question_1">
-                    <h1>Que pensez-vous de votre corps?</h1>
+                    <h1>Que pensez-vous de votre corps? test-2</h1>
                 </div>
                 <div class="choix">
                 <div class="radio_G">
@@ -197,15 +199,97 @@
 
                     </div>
             </div>
+          </div>
         </div>
-           
-            <div class="btns">
-                <div class="btn-return return"><button>question d'avant</button></div>
-                <div class="btn_next"><button>question suivante</button></div>
+    </div>
+  </div>
+   <!-- -----------------------------------------------------question__3--------------------------------------- -->
+  <div id="question__3" style="display: none;">
+    <div class="conta">
+        <div class="questions">
+            <div class="question_1">
+                <h1>Que pensez-vous de votre corps? test-3</h1>
+            </div>
+            <div class="choix">
+            <div class="radio_G">
+                <div class="option">
+                    <input type="radio" id="check3" name="check" />
+                    <label for="check3"> fatigue</label>
+
+                </div>
+                <div class="option">
+                    <input type="radio" id="check4" name="check" />
+                    <label for="check4"> trop fatgue</label>
+
+                </div>
 
             </div>
-        </div>
+           
+      </div>
+    </div>
+</div>
+</div>
+<!-- -----------------------------------------------------question__4--------------------------------------- -->
+<div id="question__4" style="display: none;">
+    <div class="conta">
+        <div class="questions">
+            <div class="question_1">
+                <h1>Que pensez-vous de votre corps?test-4</h1>
+            </div>
+            <div class="choix">
+            <div class="radio_G">
+                <div class="option">
+                    <input type="radio" id="check3" name="check" />
+                    <label for="check3"> test</label>
 
+                </div>
+                <div class="option">
+                    <input type="radio" id="check4" name="check" />
+                    <label for="check4"> test</label>
+
+                </div>
+
+            </div>
+           
+      </div>
+    </div>
+</div>
+</div>
+<!-- -----------------------------------------------------question__5--------------------------------------- -->
+
+<div id="question__5" style="display: none;">
+    <div class="conta">
+        <div class="questions">
+            <div class="question_1">
+                <h1>Que pensez-vous de votre corps? test-5</h1>
+            </div>
+            <div class="choix">
+            <div class="radio_G">
+                <div class="option">
+                    <input type="radio" id="check3" name="check" />
+                    <label for="check3"> test</label>
+
+                </div>
+                <div class="option">
+                    <input type="radio" id="check4" name="check" />
+                    <label for="check4"> test</label>
+
+                </div>
+
+            </div>
+           
+      </div>
+    </div>
+</div>
+</div>
+
+
+        <div class="btns">
+            <div class="btn-return return"><button>question d'avant</button></div>
+            <div class="btn2_next"><button>question suivante</button></div>
+
+        </div>
+    
     </section>
 
         
@@ -293,7 +377,7 @@
         <!-- -------------------------------------------------------HEROFOOTER------------------------------------------ -->
 
 
-        <script src="./js/script.js"></script>
+       
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
         <script>
@@ -307,21 +391,81 @@
 
             let btn_1 = document.querySelector("#btn_1");
             let btn_2 = document.querySelector(".btn_next");
-            let preamble = document.querySelector("#preambule");
-            let quest = document.querySelector("#question_1");
-            let quest2 = document.querySelector("#question_2");
+            let btn_3 = document.querySelector(".btn2_next");
+            let btn_4 = document.querySelector(".btn-return");
 
+            let preamble = document.querySelector("#preambule");
+            let quest1 = document.querySelector("#question_1");
+            let quest2 = document.querySelector("#question_2");
+            let quest3 = document.querySelector("#question__2");
+            let quest4 = document.querySelector("#question__3");
+           
+            
+            var  cntr = 1;
+            
  
           btn_1.addEventListener("click", function () {
            preamble.style.display = "none";
-          quest.style.display = "block";
+          quest1.style.display = "block";
+          document.querySelector(".active1").style.background = "gold";
+
         });
 
         btn_2.addEventListener("click", function () {
-          quest.style.display = "none";
-          quest2.style.display = "block";
+            quest1.style.display = "none";
+            quest2.style.display = "block";
+           
+        });
+
+
+        btn_3.addEventListener("click", function () {
+            
+            window.cntr = cntr +1;
+            j=cntr+1;
+            
+            qst1 =(`question_${cntr}`);
+            qst2 ="quest"+j;
+            
+            
+   
+
+            console.log(qst1)
+            console.log(qst2)
+
+            document.querySelector(`#question__${cntr}`).style.display = "none";
+            document.querySelector(`#question__${j}`).style.display = "block";
+
+            
+        })
+        btn_4.addEventListener("click", function () {
+
+            if (window.j  <3) {
+
+                window.cntr =3 
+            }
+             
+
+            ctrR = j-1;
+   
+
+            qst3 =(`#--question_3_${ctrR}`);
+            qst4 =(`#--question_4_${j}`);
+           
+            
+            
+            console.log(qst3)
+            console.log(qst4)
+
+            document.querySelector(`#question__${ctrR}`).style.display = "block";
+            document.querySelector(`#question__${j}`).style.display = "none";
+            
+            
         });
         </script>
+
+
+
+
 </body>
 
 </html>

@@ -388,14 +388,14 @@ body {
   justify-content: space-evenly;
   margin: auto;
   padding: 50px; }
-  .btns .btn-return button,
-  .btns .btn_next button {
-    background-color: #0d77ac;
-    border-radius: 10px;
-    padding: 1em;
-    color: white; }
   .btns .return {
     opacity: 1; }
+
+.btn-return button, .btn_next button, .btn2_next button {
+  background-color: #0d77ac;
+  border-radius: 10px;
+  padding: 1em;
+  color: white; }
 
 #question_2 .choix {
   display: flex;
