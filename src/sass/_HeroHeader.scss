@@ -1,0 +1,164 @@
+// color
+$Jaune: #f4cf1b;
+$bleu: #0d77ac;
+$bleu2: #96c5dc;
+$white :white;
+$btn_color :white;
+$color1:#0d77ac;
+$black :black;
+
+
+body{
+    margin: 0;
+    padding: 0;
+   
+    
+}
+
+*{
+    font-family: sans-serif;
+    list-style: none;
+    text-decoration: none;
+
+    
+:lang(fr) [data-fr] { display: block; }
+:lang(fr) [data-ar] { display: none; }
+
+:lang(ar) [data-ar] { display: block;  direction: rtl;  }
+:lang(ar) [data-fr] { display: none; }
+
+}
+.HeroHeader{
+    .HeroHeader_ContenantMenu{
+        background-image: url(../images/Merged-bar-45.png);
+        display: flex;
+       padding: 10px;
+       justify-content: space-between;
+      
+        nav{
+            
+            margin-top: 20px;
+            ul{
+            display: flex;
+            list-style: none;
+            font-style: none;
+            align-items: baseline;
+           
+           
+
+            .arabic{
+                padding: 0 20px;
+                button{
+                    padding: 5px 20px;
+                    border: 1.5px solid $bleu;
+                border-radius: 10px;
+                background: none;
+              
+                }
+            
+               
+                i{
+                    color: gold;
+                    font-size: 20px;
+                }
+            }
+
+
+            li{
+                cursor: pointer;
+                position: relative;
+                a{
+                    text-decoration: none;
+                    padding: 4vw 1vw;
+                     font-size: 1.7Em;
+                     @media (max-width:600px) {
+                        padding: 2vw 1vw;
+                        font-size: 1Em;
+                       
+                     } 
+                     
+                   }
+
+
+            }
+        }
+
+        }
+    }
+    .HeroHeader_WarningInfo{
+        background-color: $Jaune;
+        margin-top: -22px;
+        text-align: center;
+        line-height:  1.8;
+        p{
+            color: $bleu;
+            max-width: 40vw;
+            margin: auto;
+            font-weight: bold;
+            font-size: 0.8em;
+            @media (max-width:600px) {
+            
+                max-width: 90vw;
+    
+            }
+            
+
+        }
+    }
+
+    .HeroHeader_Illustration{
+        display: flex;
+        @media (max-width:600px) {
+            display: block;
+            text-align: center;
+           
+         } 
+     
+        text-align: center;
+        font-weight: bold;
+        img{
+            width: 50%;
+
+            @media (max-width:600px) {
+                width: 80%;
+                
+               
+             } 
+            
+        }
+        
+        .HeroHeader_Illustration--text{
+            margin-top: 55px;
+            width: 50%;
+            @media (max-width:600px) {
+                width: 100%;
+                
+               
+             } 
+
+            img{
+                width: 14%;
+            }
+            h1{
+                color: $bleu;
+
+            }
+            p{
+            font-size: 2.3vw;
+            
+
+            }
+            a{
+                background-color: $bleu;
+                padding: 5px 10px;
+                border-radius: 5px;
+                font-size: 2.5vw;
+                color: $white;
+                width: 60%;
+                margin:  10px auto;
+                min-width: 200px;
+                
+            }
+        }
+    }
+}

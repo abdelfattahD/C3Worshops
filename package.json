@@ -4,8 +4,8 @@
   "description": "C'est un projet pour valider les compétences C3N3 (C2N3).",
   "main": "index.js",
   "scripts": {
-  "compile": "node-sass Starter-file/sass/fichier.scss Starter-file/dist/css/style.css",
-  "watch": "node-sass Starter-file/sass/fichier.scss Starter-file/dist/css/style.css --watch"
+    "compile": "node-sass src/sass/fichier.scss src/dist/css/style.css",
+    "watch": "node-sass src/sass/fichier.scss src/css/style.css --watch"
   },
   "repository": {
     "type": "git",
@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/abdelfattahD/C3Worshops#readme",
   "dependencies": {
-    "node-sass": "^4.13.1"
-  }
+    "node-sass": "^4.14.0"
+  },
+  "devDependencies": {}
 }
