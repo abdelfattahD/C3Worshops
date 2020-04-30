@@ -15,24 +15,36 @@
 
 // questions
 
+/*niv :
+   si nv=0 : Facteur pronostique
+   si nv=1 : Facteur Symptômes 
+ / si nv=2 : Facteurs de gravité mineurs 
+ / si nv=3 : Facteurs de gravité majeurs
+*/
+
         (function() {
   var questions = [{
     question: " Quel est votre âge ? Ceci, afin de calculer un facteur de risque spécifique",
     choices: ["age"],
     type : 1,
+    niv : 3,
     
   },{
     question: " Pensez-vous avoir eu de la fièvre ces derniers jours (frissons, sueurs) ?  ",
     choices: [""],
     type :3,
+    niv : 1,
+
   }, {
     question: " quelle est votre température ?",
     choices: ["degrée"],
     type : 1,
+    niv : 3,
   },{
     question: "Avez-vous une toux ou une augmentation de votre toux habituelle ces derniers jours ?",
     choices: [""],
     type : 3,
+    niv :1,
   },  {
     question: "Avez-vous des douleurs musculaires ou des courbatures inhabituelles ces derniers jours ?",
     choices: [""],
@@ -53,14 +65,17 @@
     question: " cette fatigue vous oblige-t-elle à vous reposer plus de la moitié de la journée ?",
     choices: [""],
     type : 3,
+    niv : 2,
   }, {
     question: "Avez-vous des difficultés importantes pour vous alimenter ou boire depuis plus de 24h ?",
     choices: [""],
     type : 3,
+    niv : 3,
   }, {
     question: "Avez-vous vu apparaître une gêne respiratoire ou une augmentation de votre gêne respiratoire habituelle ?",
     choices: [""],
     type : 3,
+    niv : 3,
   }, {
     question: "Comment vous sentez-vous ?",
     choices: ["Bien","Assez bien","mal","/très mal"],
@@ -70,18 +85,14 @@
     choices: ["kg" ,"cm"],
     type : 1,
   }, {
-    question: "Quel est votre poids ? Afin de calculer l’indice de masse corporelle qui est un facteur influençant le risque de complications de l’infection.",
-    choices: ["kg"],
-    type : 1,
-  }, {
-    question: "Avez-vous de l’hypertension artérielle mal équilibrée ? Ou avez-vous une maladie cardiaque ou vasculaire ?",
+    question: "Avez-vous de l’hypertension artérielle ? Ou avez-vous une maladie cardiaque ou vasculaire ? Ou prenez-vous un traitement à visée cardiologique ?",
     choices: [""],
     type : 3,
   }, {
     question: "Êtes-vous diabétique ?",
     choices: [""],
     type : 3,
-  }, {
+  },  {
     question: "Avez-vous ou avez-vous eu un cancer ces trois dernières années ?",
     choices: [""],
     type : 3,
@@ -101,6 +112,14 @@
     question: "Êtes-vous enceinte ?",
     choices: [""],
     type : 3,
+  },{
+    question: "Avez-vous une maladie connue pour diminuer vos défenses immunitaires?",
+    choices: [""],
+    type : 3,
+  },{
+    question: "Prenez-vous un traitement immunosuppresseur ? C’est un traitement qui diminue vosdéfenses contre les infections. Voici quelques exemples : corticoïdes, méthotrexate,ciclosporine, tacrolimus, azathioprine, cyclophosphamide (liste non exhaustive).?",
+    choices: [""],
+    type : 3,
   }, ];
 
 
@@ -109,7 +128,9 @@
   var selections = []; //Array containing user choices
   var FGMJ=0;    //Tracks Facteurs de gravité majeurs  
   var FGMN = 0; //Tracks Facteurs de gravité  mineurs
-  var quiz = $('#quiz'); //Quiz div object
+  var FP = 0; //Tracks  facteur pronostique
+  var FS = 0; //Tracks  facteur Symptômes
+  var quiz = $('#quiz'); //Quiz div object 
   
   // Display initial question
   displayNext();
@@ -177,7 +198,7 @@
     if(quiz.is(':animated')) {
       return false;
     }
-    questionCounter = 0;
+    questionCounter = 0; FGMJ=0; FGMN = 0; FS = 0; 
     selections = [];
     displayNext();
     $('#start').hide();
@@ -298,11 +319,17 @@ if(questions[questionCounter].type=== 1){
 // algo
 function algo() {
   
-  if ( selections[0] <=15  || selections[2] >=35 ){  FGMJ++ ;}
+  if ( (selections[0] <=15 ) || (selections[2] >=35 )||  (questions[questionCounter].niv=== 3 && selections[questionCounter] ===0)){  FGMJ++ ; }
  
  
-  else{
-    FGMJ;
+  else if (questions[questionCounter].niv=== 2 && selections[questionCounter] ===0){
+    FGMN++;
+  }
+  else if (questions[questionCounter].niv=== 0 && selections[questionCounter] ===0){
+    FP++;
+  }
+  else if (questions[questionCounter].niv=== 1 && selections[questionCounter] ===0){
+    FS++;
   }
 
 
@@ -316,18 +343,39 @@ function algo() {
     var score = $('<p>',{id: 'question'});
     if (selections[0] <=15){  
       score.append(' Prenez contact avec votre médecin généraliste au moindre doute. Cette application n’est pour l’instant pas adaptée aux personnes de moins de 15 ans. En cas d’urgence, appeler le 15.');}
-      else if  (FGMJ <=1){  
-        score.append(' darbk tran soni 114');}
+      else if  (FGMJ >=1){ 
+
+        score.append('appel 141');
+       
+
+      }
+      else if  (FP ===0){
+
+        if  ( (FGMN ===0) && (selections[0] <=50 ) ){  
+          score.append('  nous vous conseillons de rester à votre domicile et de contacter votre médecin en cas d’apparition de nouveaux symptômes. Vous pourrez aussi utiliser à nouveau l’application pour réévaluer vos symptômes')}
+          
+          else if (FGMN >=1  ){
+            score.append(' téléconsultation ou médecin généraliste ou visite à domicile')}
+
+       }
+
+      else if  (FP >=1){  
+           if  (FGMN ===0 ){  
+            score.append(' téléconsultation ou médecin généraliste ou visite à domicile')}
+            
+            else if (FGMN ===1){score.append(' téléconsultation ou médecin généraliste ou visite à domicile')}
+
+            else if (FGMN >1){score.append(' appel 141')};  
+      }
+          
+          
      
       else{
         score.append(' miw');
       }
     
-      FGMJ=0;    
-  var FGMN = 0;
         return score;
-
-}
+  }
   
   
 })();
