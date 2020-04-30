@@ -22,52 +22,52 @@
     type : 1,
     
   },{
-    question: " Pensez-vous avoir ou avoir eu de la fièvre ces derniers jours (frissons, sueurs) ? ",
+    question: " Pensez-vous avoir eu de la fièvre ces derniers jours (frissons, sueurs) ?  ",
     choices: [""],
     type :3,
   }, {
-    question: "Que pensez-vous de votre corps?",
-    choices: ["fatigue", "Bien"," trop fatgue" ,"moyen"],
-    type : 2,
-  }, {
-    question: "Ces dernières 48 heures, quelle a été votre température la plus élevée ?",
+    question: " quelle est votre température ?",
     choices: ["degrée"],
     type : 1,
-  }, {
-    question: "Ces derniers jours, avez-vous une toux ou une augmentation de votre toux habituelle ?",
+  },{
+    question: "Avez-vous une toux ou une augmentation de votre toux habituelle ces derniers jours ?",
+    choices: [""],
+    type : 3,
+  },  {
+    question: "Avez-vous des douleurs musculaires ou des courbatures inhabituelles ces derniers jours ?",
     choices: [""],
     type : 3,
   }, {
-    question: "Ces derniers jours, avez-vous noté une forte diminution ou perte de votre goût ou de votre odorat ?",
+    question: "Avez-vous un mal de gorge apparu ces derniers jours es derniers jours, avez-vous noté une forte diminution ou perte de votre goût ou de votre odorat ?",
     choices: [""],
     type : 3,
   }, {
-    question: "Ces derniers jours, avez-vous eu un mal de gorge et/ou des douleurs musculaires et/ou des courbatures inhabituelles ?",
+    question: "Avez-vous de la diarrhée ces dernières 24 heures(au moins 3 selles molles)?",
     choices: [""],
     type : 3,
   }, {
-    question: "Ces dernières 24 heures, avez-vous de la diarrhée ? Avec au moins 3 selles molles.",
+    question: "Avez-vous une fatigue inhabituelle ces derniers jours ?",
     choices: [""],
     type : 3,
   }, {
-    question: "Ces derniers jours, avez-vous une fatigue inhabituelle ?",
+    question: " cette fatigue vous oblige-t-elle à vous reposer plus de la moitié de la journée ?",
     choices: [""],
     type : 3,
   }, {
-    question: "Cette fatigue vous oblige-t-elle à vous reposer plus de la moitié de la journée ?",
+    question: "Avez-vous des difficultés importantes pour vous alimenter ou boire depuis plus de 24h ?",
     choices: [""],
     type : 3,
   }, {
-    question: "Depuis 24 heures ou plus, êtes-vous dans l'impossibilité de vous alimenter ou de boire ?",
+    question: "Avez-vous vu apparaître une gêne respiratoire ou une augmentation de votre gêne respiratoire habituelle ?",
     choices: [""],
     type : 3,
   }, {
-    question: "Ces dernières 24 heures, avez-vous noté un manque de souffle inhabituel lorsque vous parlez ou faites un petit effort ?",
-    choices: [""],
-    type : 3,
+    question: "Comment vous sentez-vous ?",
+    choices: ["Bien","Assez bien","mal","/très mal"],
+    type : 2,
   }, {
-    question: "Quel est votre taille ? Afin de calculer l’indice de masse corporelle qui est un facteur influençant le risque de complications de l’infection.",
-    choices: ["cm"],
+    question: "Quel est votre poids ? Quelle est votre taille ",
+    choices: ["kg" ,"cm"],
     type : 1,
   }, {
     question: "Quel est votre poids ? Afin de calculer l’indice de masse corporelle qui est un facteur influençant le risque de complications de l’infection.",
@@ -107,26 +107,20 @@
   
   var questionCounter = 0; //Tracks question number
   var selections = []; //Array containing user choices
+  var FGMJ=0;    //Tracks Facteurs de gravité majeurs  
+  var FGMN = 0; //Tracks Facteurs de gravité  mineurs
   var quiz = $('#quiz'); //Quiz div object
   
   // Display initial question
   displayNext();
 
  
-  function displayScore() {
-
-    var score = $('<p>',{id: 'question'});
-    
-    
-    
-        score.append(' Prenez contact avec votre médecin généraliste au moindre doute. Cette application n’est pour l’instant pas adaptée aux personnes de moins de 15 ans. En cas d’urgence, appeler le 15.');
-        return score;
-
-}
+  
   
   // Click handler for the 'next' button
   $('.btn2_next').on('click', function (e) {
     e.preventDefault();
+    
 
     
     // Suspend click listener during fade animation
@@ -134,18 +128,22 @@
       return false;
     }
     choose();
+    algo();
     
     // If no user selection, progress is stopped
-    if (isNaN(selections[questionCounter])) {
+    if ((isNaN(selections[questionCounter])) || ( questions[questionCounter].type=== 1 && selections[questionCounter]=== 0)) {
       alert('Please make a selection!');
     } else {
 
-        if (selections[0] <=15){  
-            questionCounter = 21;}
-            else{
-                questionCounter++;
-            }
-      
+        if ( (selections[1] === 1) && (questionCounter === 1)  || (selections[7] === 1)&&(questionCounter === 7) ){  
+            questionCounter++;
+            
+          }
+        else if  (FGMJ >=1){  
+           questionCounter = 21;}
+
+            
+            questionCounter++;  
       displayNext();
     }
   });
@@ -158,7 +156,17 @@
       return false;
     }
     choose();
-    questionCounter--;
+
+    if ( (selections[1] ===1) && (questionCounter === 3 )|| (selections[7] === 1)&&(questionCounter === 9)){  
+      questionCounter = 1;
+      
+    }
+  
+      else{
+        questionCounter--;
+      }
+
+  
     displayNext();
   });
   
@@ -244,6 +252,7 @@ if(questions[questionCounter].type=== 1){
         }
 
         console.table(selections);
+         console.table(questionCounter);
   }
   
   // Displays next requested element
@@ -279,22 +288,47 @@ if(questions[questionCounter].type=== 1){
      
       }
 
-      // Controls display of 'age' input
-      if(questionCounter === 2){
-          $('.age').show();
-        } else {
-          
-          $('.age').hide();
-        }
+      
+      
 
 
     });
   }
 
+// algo
+function algo() {
   
+  if ( selections[0] <=15  || selections[2] >=35 ){  FGMJ++ ;}
+ 
+ 
+  else{
+    FGMJ;
+  }
 
+
+
+};
+
+
+  //  display  result
+  function displayScore() {
+
+    var score = $('<p>',{id: 'question'});
+    if (selections[0] <=15){  
+      score.append(' Prenez contact avec votre médecin généraliste au moindre doute. Cette application n’est pour l’instant pas adaptée aux personnes de moins de 15 ans. En cas d’urgence, appeler le 15.');}
+      else if  (FGMJ <=1){  
+        score.append(' darbk tran soni 114');}
+     
+      else{
+        score.append(' miw');
+      }
+    
+      FGMJ=0;    
+  var FGMN = 0;
+        return score;
+
+}
   
-  // Computes score and returns a paragraph element to be displayed
   
 })();
 
