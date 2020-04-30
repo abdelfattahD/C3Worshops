@@ -32,6 +32,30 @@
     }
 }
 
+
+.progress {
+    background-color: #d8d8d8;
+    border-radius: 20px;
+    height: 30px;
+    width: 70%;
+    margin: auto;
+  }
+  
+  .progress-done {
+    background: linear-gradient(to      right, #08f26e, #06c258);
+    box-shadow: 0 3px 3px -5px #08f26e,   0px 2px 5px #06c258; 
+    border-radius: 20px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    height: 100%;
+    width: 0;
+    transition: 1.5s ease;
+
+  }
+
 .preamb {
     padding-top: 0.7em;
     padding-bottom: 0.7em;

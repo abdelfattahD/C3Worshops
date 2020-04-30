@@ -117,7 +117,7 @@
     choices: [""],
     type : 3,
   },{
-    question: "Prenez-vous un traitement immunosuppresseur ? C’est un traitement qui diminue vosdéfenses contre les infections. Voici quelques exemples : corticoïdes, méthotrexate,ciclosporine, tacrolimus, azathioprine, cyclophosphamide (liste non exhaustive).?",
+    question: "Prenez-vous un traitement immunosuppresseur ? C’est un traitement qui diminue vos défenses contre les infections. Voici quelques exemples : corticoïdes, méthotrexate,ciclosporine, tacrolimus, azathioprine, cyclophosphamide (liste non exhaustive).?",
     choices: [""],
     type : 3,
   }, ];
@@ -131,6 +131,7 @@
   var FP = 0; //Tracks  facteur pronostique
   var FS = 0; //Tracks  facteur Symptômes
   var quiz = $('#quiz'); //Quiz div object 
+
   
   // Display initial question
   displayNext();
@@ -163,7 +164,7 @@
         else if  (FGMJ >=1){  
            questionCounter = 21;}
 
-            
+           setTimeout() ;
             questionCounter++;  
       displayNext();
     }
@@ -187,7 +188,7 @@
         questionCounter--;
       }
 
-  
+      setTimeout()
     displayNext();
   });
   
@@ -198,8 +199,9 @@
     if(quiz.is(':animated')) {
       return false;
     }
-    questionCounter = 0; FGMJ=0; FGMN = 0; FS = 0; 
+    questionCounter = 0; FGMJ=0; FGMN = 0; FS = 0; PRG=0;
     selections = [];
+    setTimeout()
     displayNext();
     $('#start').hide();
   });
@@ -335,6 +337,20 @@ function algo() {
 
 
 };
+
+//  progress bar
+
+let progress = document.querySelector('.progress-done');
+var PRG ;//Tracks  Progress
+
+
+function setTimeout()  {
+  progress.style.opacity = 1;
+  PRG = (100/23)*(questionCounter +2 ); //Tracks  Progress
+  document.querySelector(".progress-done").style.width = PRG + '%';
+
+  
+}
 
 
   //  display  result
