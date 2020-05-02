@@ -321,10 +321,10 @@ if(questions[questionCounter].type=== 1){
 // algo
 function algo() {
   
-  if ( (selections[0] <=15 ) || (selections[2] >=35 )||  (questions[questionCounter].niv=== 3 && selections[questionCounter] ===0)){  FGMJ++ ; }
+  if ( (selections[0] <=15 ) || (selections[2] <=35 )||  (questions[questionCounter].niv=== 3 && selections[questionCounter] ===0)){  FGMJ++ ; }
  
  
-  else if (questions[questionCounter].niv=== 2 && selections[questionCounter] ===0){
+  else if ((questions[questionCounter].niv=== 2 && selections[questionCounter] ===0) || (selections[2] >=39 )){
     FGMN++;
   }
   else if (questions[questionCounter].niv=== 0 && selections[questionCounter] ===0){
