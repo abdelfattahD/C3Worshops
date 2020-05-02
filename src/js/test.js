@@ -355,17 +355,24 @@ function setTimeout()  {
 
   //  display  result
   function displayScore() {
+    document.querySelector(".active2").style.background = "gold";
 
     var score = $('<p>',{id: 'question'});
     if (selections[0] <=15){  
-      score.append(' Prenez contact avec votre médecin généraliste au moindre doute. Cette application n’est pour l’instant pas adaptée aux personnes de moins de 15 ans. En cas d’urgence, appeler le 15.');}
-      else if  (FGMJ >=1){ 
+      score.append(' Prenez contact avec votre médecin généraliste au moindre doute. Cette application n’est pour l’instant pas adaptée aux personnes de moins de 15 ans. En cas d’urgence, appeler le 15.');
+    }
 
-        score.append('appel 141');
-       
+    else if  (FGMJ >=1){ 
 
-      }
-      else if  (FP ===0){
+      score.append('appel 141');
+     
+    }
+
+      
+
+      else if  ( ((selections[1] ===0 ) || (selections[3] ===0 )) && ((selections[5] ===0 ) || (selections[3] ===0 )) && ((selections[3] ===0 ) || (selections[4] ===0 ))&& ((selections[1] ===0 ) || (selections[6] ===0 ))   ){ 
+
+       if  (   FP ===0){
 
         if  ( (FGMN ===0) && (selections[0] <=50 ) ){  
           score.append('  nous vous conseillons de rester à votre domicile et de contacter votre médecin en cas d’apparition de nouveaux symptômes. Vous pourrez aussi utiliser à nouveau l’application pour réévaluer vos symptômes')}
@@ -383,18 +390,65 @@ function setTimeout()  {
 
             else if (FGMN >1){score.append(' appel 141')};  
       }
-          
-          
      
-      else{
-        score.append(' miw');
+    }
+         
+    
+    else if  ((selections[1] ===0 ) && (selections[3] ===0 )){ 
+
+      if  ( FP ===0){
+
+        if  ( FGMN <=1 ){  
+          score.append('téléconsultation ou médecin généraliste ou visite à domicile')
+        }  
+       }
+
+       else if  ( FP >=1){
+
+        if  ( FGMN ===0 ){  
+          score.append('téléconsultation ou médecin généraliste ou visite à domicile')
+        }  
+        else if  ( FGMN ===1 ){  
+          score.append('téléconsultation ou médecin généraliste ou visite à domicile')
+        }  
+
+        else if  ( FGMN >1 ){  
+          score.append('appel 141')
+        }  
+
+
+       }
+       else if  (FGMJ >=1){ 
+
+        score.append('appel 141');
+       
+      }
+     
+    }
+    else if  ((selections[1] * selections[3] * selections[5] * selections[4] ===0 )){ 
+      if  ( FGMN ===0 ){  
+        score.append('Votre situation ne relève probablement pas du Covid-19. Consultez votre médecin au moindre doute')
+      } 
+      else if  ( FGMN >=1 ){  
+        score.append('Votre situation ne relève probablement pas du Covid-19. Un avis médical est recommandé. Au moindre doute, appelez le 141.')
+      } 
+
+    }
+     
+      else if  ( FS ===0 ){
+        score.append(' Votre situation ne relève probablement pas du Covid-19. N’hésitez pas à contacter votre médecin en cas de doute. Vous pouvez refaire le test en cas de nouveau symptôme pour réévaluer la situation. Pour toute information concernant le Covid-19 allez vers la page d’accueil.');
+      }
+
+      else {
+        score.append('Restez chez vous au maximum en attendant que les symptômes disparaissent.  Prenez votre température deux fois par jour. Rappel des mesures d’hygiène.');
       }
     
         return score;
-  }
+    }
   
   
-})();
+}
+)();
 
 
        
